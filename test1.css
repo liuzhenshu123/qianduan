@@ -1,0 +1,56 @@
+#testeqe111 {
+    width: 600px;
+    padding: 200px 20px;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+span {
+    background: red;
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.changeColor span {
+    background: green;
+}
+
+.changeLength span:after {
+    content: "length";
+    margin-left: 10px;
+}
+
+#bag {
+    width: 400px;
+    height: 250px;
+    margin: 0 auto;
+    background: url(img/女神.jpg) center no-repeat;
+    background-size: 80%;
+}
+
+/*#bag.changephoto{*/
+/*    background: url(img/悟空.jpg) center no-repeat;*/
+/*}*/
+
+#bag-health{
+    width: 400px;
+    border: 1px #000 solid;
+    margin: 0 auto 20px auto;
+}
+
+#bag-health div{
+    height: 10px;
+    background: crimson;
+}
+
+
+#controls{
+    width: 200px;
+    margin: 0 auto;
+}
+
+#controls button{
+    margin-left: 20px;
+}
