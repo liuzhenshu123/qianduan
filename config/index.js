@@ -12,14 +12,6 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api':{
-        //测试环境
-        taret:'localhost:8033',//接口域名
-        changeOrigin: true,//是否跨域
-        pathRewrite:{
-          '^/api':''//需要rewrite重写的
-        }
-      }
     },
 
     // Various Dev Server settings

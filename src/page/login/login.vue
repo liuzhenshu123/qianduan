@@ -40,35 +40,37 @@
 
       getBookMarks: function () {
         console.log("进入获取书签方法")
-        this.$http.jsonp('http://192.168.200.73:8033/base/bookmark/list', {
-            params: {
-              userId: 1,
-              page: 1,
-              size: 1,
-              // sessionString: sessionStorage.getItem('session'),
-              languageId: "111"
-            }
-          },
-          {
-            headers: {},
-            emulateJSON: true
-          }).then((response) => {
-          // this.movie = response.data;
-          console.log(response);
-        }).catch(error => {
-          console.log("错误error:" + error)
-        });
-        // this.$http.get('http://192.168.200.73:8033/base/bookmark/list', {
-        //   params: {
-        //     userId: 1,
-        //     page: 1,
-        //     size: 1,
-        //     // sessionString: sessionStorage.getItem('session'),
-        //     languageId: "111"
-        //   }
-        // }).then((response) => {
-        //   console.log(response)
-        // })
+        // this.$http.jsonp('http://192.168.200.73:8033/base/bookmark/list', {
+        //     params: {
+        //       userId: 1,
+        //       page: 1,
+        //       size: 1,
+        //       // sessionString: sessionStorage.getItem('session'),
+        //       languageId: "111"
+        //     }
+        //   },
+        //   {
+        //     headers: {
+        //       "token": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        //     },
+        //     emulateJSON: false
+        //   }).then((response) => {
+        //   // this.movie = response.data;
+        //   console.log(response);
+        // }).catch(error => {
+        //   console.log(error)
+        // });
+        this.$http.get('http://192.168.200.73:8033/base/bookmark/list', {
+          params: {
+            userId: 1,
+            page: 1,
+            size: 1,
+            // sessionString: sessionStorage.getItem('session'),
+            languageId: "111"
+          }
+        }).then((response) => {
+          console.log(response)
+        })
       },
       dlu: function () {
         this.$router.push("/test1")
