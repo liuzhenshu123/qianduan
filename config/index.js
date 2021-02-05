@@ -4,13 +4,23 @@
 
 const path = require('path')
 
+
 module.exports = {
   dev: {
 
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/api':{
+        //测试环境
+        taret:'localhost:8033',//接口域名
+        changeOrigin: true,//是否跨域
+        pathRewrite:{
+          '^/api':''//需要rewrite重写的
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -20,7 +30,7 @@ module.exports = {
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
-    
+
     /**
      * Source Maps
      */

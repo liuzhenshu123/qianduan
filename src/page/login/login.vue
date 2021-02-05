@@ -4,6 +4,7 @@
       <button id="denlgu" v-on:click="dlu">{{$data.button.denglu}}</button>
       <button id="zhuce" v-on:click="zce">{{$data.button.zhuce}}</button>
       <button id="test" v-on:click="testHD">{{$data.button.test}}</button>
+      <button id="getBookMarksBt" v-on:click="getBookMarks">{{$data.button.getBookMarks}}</button>
     </div>
   </div>
 </template>
@@ -18,7 +19,8 @@
         button: {
           denglu: "登录",
           zhuce: "注册",
-          test: "这是测试后端接口"
+          test: "这是测试后端接口",
+          getBookMarks: "测试获取书签"
         }
       }
     },
@@ -26,7 +28,7 @@
     methods: {
       testHD: function () {
         console.log("进入testHD方法")
-        this.$http.get('http://192.168.200.59:8090/test1', {
+        this.$http.get('http://192.168.200.73:8090/test1', {
           params: {
             // sessionString: sessionStorage.getItem('session'),
             languageId: "111"
@@ -35,16 +37,38 @@
           console.log(response)
         })
       },
-      login: function(){
-        console.log("进入login方法")
-        this.$http.get('http://localhost:8033/login', {
-          params: {
-            // sessionString: sessionStorage.getItem('session'),
-            languageId: "111"
-          }
-        }).then((response) => {
-          console.log(response)
-        })
+
+      getBookMarks: function () {
+        console.log("进入获取书签方法")
+        this.$http.jsonp('http://192.168.200.73:8033/base/bookmark/list', {
+            params: {
+              userId: 1,
+              page: 1,
+              size: 1,
+              // sessionString: sessionStorage.getItem('session'),
+              languageId: "111"
+            }
+          },
+          {
+            headers: {},
+            emulateJSON: true
+          }).then((response) => {
+          // this.movie = response.data;
+          console.log(response);
+        }).catch(error => {
+          console.log("错误error:" + error)
+        });
+        // this.$http.get('http://192.168.200.73:8033/base/bookmark/list', {
+        //   params: {
+        //     userId: 1,
+        //     page: 1,
+        //     size: 1,
+        //     // sessionString: sessionStorage.getItem('session'),
+        //     languageId: "111"
+        //   }
+        // }).then((response) => {
+        //   console.log(response)
+        // })
       },
       dlu: function () {
         this.$router.push("/test1")
