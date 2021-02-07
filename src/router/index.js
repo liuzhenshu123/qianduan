@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import login from '@/page/login/login'
 
 import test1 from '../page/test/test1'
+import showBookMarks from '../page/mySer/showBookMarks'
 
 let arrs = [{
   path: '/',
@@ -12,6 +13,10 @@ let arrs = [{
   path: '/test1',
   name: 'test1',
   component: test1
+}, {
+  path: '/showBookMarks',
+  name: 'showBookMarks',
+  component: showBookMarks
 }]
 Vue.use(Router)
 

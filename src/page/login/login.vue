@@ -39,38 +39,24 @@
       },
 
       getBookMarks: function () {
-        console.log("进入获取书签方法")
-        // this.$http.jsonp('http://192.168.200.73:8033/base/bookmark/list', {
-        //     params: {
-        //       userId: 1,
-        //       page: 1,
-        //       size: 1,
-        //       // sessionString: sessionStorage.getItem('session'),
-        //       languageId: "111"
-        //     }
-        //   },
-        //   {
-        //     headers: {
-        //       "token": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
-        //     },
-        //     emulateJSON: false
-        //   }).then((response) => {
-        //   // this.movie = response.data;
-        //   console.log(response);
-        // }).catch(error => {
-        //   console.log(error)
-        // });
-        this.$http.get('http://192.168.200.73:8033/base/bookmark/list', {
-          params: {
-            userId: 1,
-            page: 1,
-            size: 1,
-            // sessionString: sessionStorage.getItem('session'),
-            languageId: "111"
-          }
-        }).then((response) => {
-          console.log(response)
-        })
+        console.log("进入获取书签方法,跳转页面")
+        // this.$http.get('http://192.168.200.73:8033/base/bookmark/list', {
+        //   params: {
+        //     userId: 1,
+        //     page: 1,
+        //     size: 1,
+        //     // sessionString: sessionStorage.getItem('session'),
+        //     languageId: "111"
+        //   }
+        // }).then((response) => {
+        //   // response.data.list
+        //   console.log(response.data.list)
+        //   this.$router.push({
+        //     path: "/showBookMarks",
+        //     query: {}
+        //   })
+        // })
+        this.$router.push("/showBookMarks")
       },
       dlu: function () {
         this.$router.push("/test1")
